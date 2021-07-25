@@ -13,10 +13,10 @@ def murmur2(input:bytes,seed=0):
 
     round = 0
     while length >= (round*4)+4:
-        k = input[round]
-        k |= input[round+1]<<8
-        k |= input[round+2]<<16
-        k |= input[round+3]<<24
+        k = input[(round*4)]
+        k |= input[(round*4)+1]<<8
+        k |= input[(round*4)+2]<<16
+        k |= input[(round*4)+3]<<24
 
         k = int_to_4bytes(k)
 
